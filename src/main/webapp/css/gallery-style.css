@@ -1,0 +1,99 @@
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", serif;
+}
+
+* {
+    font-family: "微软雅黑", "Microsoft YaHei", serif;
+    font-weight: 500;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.gallery {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#gallery {
+    z-index: 2;
+}
+
+.gallery-entries {
+    margin: 1%;
+    list-style: none;
+    padding: 0;
+
+}
+
+.gallery-entries .gallery-item {
+    float: left;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    margin-bottom: 4%;
+    width: 57px;
+    height: 80px;
+    text-align: center;
+}
+
+.gallery-entries .gallery-item img {
+    border: 1px;
+    max-width: 100%;
+}
+
+.gallery-entries .gallery-item a {
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.gallery-entries .gallery-item a h3 {
+    width: 57px;
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 3px;
+    align: center;
+    cursor: pointer;
+}
+
+.gallery-entries .gallery-item a:hover h3, .gallery-entries .gallery-item a:active h3 {
+    text-decoration: underline;
+}
+
+.gallery-item .appname-div {
+    color: #555;
+    /* overflow: hidden;
+    text-overflow:ellipsis; */
+    white-space: normal;
+    padding-top: 3px;
+
+}
+
+
+.cleaner {
+    clear: both;
+}
+.nav-list>li>a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /*width: 90%;*/
+}
+
+
+
