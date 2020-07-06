@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
 @ServerEndpoint("/Controller/webSocket/{username}")
 public class WebSocket {
    private static int onlineCount = 0;

@@ -109,7 +109,37 @@ public class ProjectService {
       connection.close();
       return gson.toJson(arrayList);
    }
-
+   /***
+    * @函数功能：根据项目（群聊）id 查询群成员
+    * @param chat:
+    * @return：java.lang.String
+    */
+   public static String getUsersByProjectId(Integer chat) throws SQLException, IOException, ClassNotFoundException {
+      Connection connection = DButils.connectDB(0);
+      Statement stm = connection.createStatement();
+      String sql = "select * from relationship where chat=" + chat;
+      String sql1="show full columns FROM relationship";
+      ResultSet rs = stm.executeQuery(sql1);
+      StringBuilder sb=new StringBuilder();
+      int userCount=0;
+      while (rs.next()) {
+         userCount++;
+      }
+      userCount=userCount-4;//获取群聊中成员数量
+      rs = stm.executeQuery(sql);
+      while (rs.next()) {
+         for (int i = 2; i <=userCount +1; i++) {
+            String str=rs.getString(i);
+            if (str!=null && (!str.equals(""))) {
+               sb.append(str).append(" ");
+            }
+         }
+      }
+      rs.close();
+      stm.close();
+      connection.close();
+      return sb.toString();
+   }
    /*
     *保存信息
     */

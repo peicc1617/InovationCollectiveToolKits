@@ -12,7 +12,8 @@ if ('WebSocket' in window) {
         mehtod: 'get',
         async: false,
         success: function (data) {
-            username = JSON.parse(data.content).nickName;
+            // username = JSON.parse(data.content).nickName;
+            username =data.content.nickName
         }
     });
     websocket = new WebSocket('ws://' + host + '/InnovationCollectiveToolKits/Controller/webSocket/' + username);

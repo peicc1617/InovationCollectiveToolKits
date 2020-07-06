@@ -94,6 +94,14 @@ public class Service extends HttpServlet {
                e.printStackTrace();
             }
             break;
+         case "getUsersByProjectId":
+            try {
+               Integer chat = Integer.parseInt(request.getParameter("chat"));
+               response.getWriter().print(ProjectService.getUsersByProjectId(chat));
+            } catch (SQLException | ClassNotFoundException e) {
+               e.printStackTrace();
+            }
+            break;
       }
    }
 

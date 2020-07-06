@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>协同工具集</display-name>
+  <display-name>协同工具集-测试</display-name>
    <welcome-file-list>
       <welcome-file>index</welcome-file>
    </welcome-file-list>

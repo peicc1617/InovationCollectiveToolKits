@@ -155,7 +155,27 @@ function sendMessage() {
         $('#editor2').text("");
     }
 }
+//根据项目（群聊）id 查询群成员
+function getUsersByProjectId(num) {
+    $.ajax({
+        type: "post",
+        url: "Service",
+        async: false,
+        data: {'chat': num + "", "type": "getUsersByProjectId"},
+        success: function (result) {
+            console.log("群聊成员："+result);
+            if (result!=null){
+                $("#groupMembers").empty();//清空成员列表
+                var members=result.split(" ");
+                for (var i = 0; i <members.length ; i++) {
+                    var li="<li>"+members[i]+"</li>";
+                    $("#groupMembers").append(li);
+                }
+            }
 
+        }
+    })
+}
 function loadHistory(num) {
     $.ajax({
         type: "post",
@@ -193,6 +213,7 @@ function loadHistory(num) {
             $(".scroll-content").scrollTop($(".scroll-content")[0].scrollHeight);
         }
     });
+    getUsersByProjectId(num);
 }
 
 function showAllUser() {
